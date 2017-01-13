@@ -1,0 +1,11 @@
+include = {
+    path = "${find_in_parent_folders()}"
+}
+
+# Configure Terragrunt to locally store the tfstate files (eschew the S3 bucket)
+remote_state = {
+    backend = "local"
+    config {
+        path = "terraform.tfstate"
+    }
+}
